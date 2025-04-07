@@ -6,10 +6,9 @@ using UnityEngine.AI;
 
 namespace NodeCanvas.Tasks.Actions {
 
-	public class Support_Approach : ActionTask
+	public class Return_AT : ActionTask
 	{
-		public BBParameter<bool> targetPlayer;
-		public BBParameter<GameObject> player;
+		public BBParameter<GameObject> support;
 		NavMeshAgent navAgent;
 
 		protected override string OnInit()
@@ -18,10 +17,9 @@ namespace NodeCanvas.Tasks.Actions {
 			return null;
 		}
 
-		protected override void OnUpdate()
+		protected override void OnExecute()
 		{
-			targetPlayer.value = true;
-			navAgent.SetDestination(player.value.transform.position);
+			navAgent.SetDestination(support.value.transform.position);
 		}
 	}
 }
