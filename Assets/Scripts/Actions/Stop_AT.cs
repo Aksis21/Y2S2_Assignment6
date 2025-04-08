@@ -1,5 +1,6 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using UnityEngine;
 using UnityEngine.AI;
 
 
@@ -18,6 +19,7 @@ namespace NodeCanvas.Tasks.Actions {
 		protected override void OnExecute()
 		{
 			navAgent.SetDestination(agent.transform.position);
+			EndAction(true);
 		}
 	}
 }
